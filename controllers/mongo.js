@@ -1,13 +1,11 @@
 const { MongoClient, ObjectId } = require('mongodb')
 
-// const URI = "mongodb+srv://USER:PASSWORD@HOST"
-const uri = "mongodb+srv://saurmo-udem:9nVhp5fsbdKQRBLf@clusterudem.3l9e6.mongodb.net/?retryWrites=true&w=majority";
-// HOST: clusterudem.3l9e6.mongodb.net
-// USER: saurmo-udem
-// PASSWORD: 9nVhp5fsbdKQRBLf
-// DATABASE: SASHA
+
+const uri = "mongodb+srv://santi:nHTJCPk85pGEyw2R@cluster0.uqhznxt.mongodb.net/?retryWrites=true&w=majority";
+
 const mongoClient = new MongoClient(uri)
-const db = mongoClient.db('sasha')
+const db = mongoClient.db('universidad')
+
 const getDocuments = async (collectionName) => {
     
     const collection = db.collection(collectionName)
