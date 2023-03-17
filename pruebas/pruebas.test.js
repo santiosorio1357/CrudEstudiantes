@@ -45,7 +45,7 @@ describe('API endpoint /estudiantes', () => {
     const expectedObject={
       "data": {
           "acknowledged": true,
-          "insertedId": 
+          
       },
       "message": "successfully",
       "status": 200
