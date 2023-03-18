@@ -1,6 +1,8 @@
 # CrudEstudiantes
 Crud para estudiantes y sus respectivos test con node y mongo
 
+**Debe tener instalado node y NPM**
+
 # Guía de ejecución de pruebas
 **Antes de que nada se deben instalar todas las dependecias, de la siguiente forma:**
 
