@@ -14,8 +14,7 @@ const getDocuments = async (collectionName) => {
 }
 
 const getDocumentsWithFilter = async (collectionName, filter) => {
-    
-    
+
     const collection = db.collection(collectionName)
     const result = await collection.find(filter).toArray();
     return result
@@ -35,21 +34,18 @@ const insertDocument = async (collectionName, data) => {
     const result = await collection.insertOne(data);
     console.log("entra")
     return result
-}
+} 
 
 const updateDocumentById = async (collectionName, { id, data }) => {
-    
-    const idMongo = new ObjectId(id)
     const collection = db.collection(collectionName)
     delete data._id
-    const result = await collection.replaceOne({ _id: idMongo }, data);
+    const result = await collection.replaceOne({cedula: id }, data);
     return result
 }
 
 const deleteDocumentById = async (collectionName, id) => {
-    const idMongo = new ObjectId(id)
     const collection = db.collection(collectionName)
-    const result = await collection.deleteOne({ _id: idMongo });
+    const result = await collection.deleteMany({ cedula: id });
     return result
 }
 

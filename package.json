@@ -4,6 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "testget": "jest pruebas/prueba.get.test.js",
+    "testgetid": "jest pruebas/prueba.getID.test.js",
+    "testpost": "jest pruebas/prueba.post.test.js",
+    "testput": "jest pruebas/prueba.put.test.js",
+    "testdelete": "jest pruebas/prueba.delete.test.js",
     "test": "jest pruebas/pruebas.test.js",
     "dev": "nodemon app.js"
   },
@@ -17,10 +22,6 @@
     "jest": "^29.5.0",
     "mongoose": "^7.0.0",
     "nodemon": "^2.0.20"
-    
   },
-  "devDependencies": {
-    
-    
-  }
+  "devDependencies": {}
 }

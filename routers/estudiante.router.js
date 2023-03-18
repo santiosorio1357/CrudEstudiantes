@@ -47,8 +47,7 @@ router.put('/estudiantes/:id', async (req, res) => {
 
 // Eliminar un estudiante por su ID
 router.delete('/estudiantes/:id', async(req, res) => {
-    const cedula = req.params.id
-
+    let cedula = req.params.id  
     const response=await deleteDocumentById("estudiantes",cedula)
     res.send({
         data:response,
