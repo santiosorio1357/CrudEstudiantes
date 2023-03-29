@@ -14,7 +14,7 @@ describe('API endpoint /estudiantes', () => {
     const response = await axios.post(URL, newStudent);
     const resultStudent = response.data;
     // Assert
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(200); 
     expect(resultStudent).toMatchObject(newStudent);
   });
 

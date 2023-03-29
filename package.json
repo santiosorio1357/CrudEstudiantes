@@ -3,8 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": ["pruebas/pruebas.test.js"],
+    "coverageThreshold": {
+      "global": {
+        "lines": 102
+      }
+    }
+  },
   "scripts": {
-    "test": "jest pruebas/pruebas.test.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "dev": "nodemon app.js"
   },
   "author": "",
