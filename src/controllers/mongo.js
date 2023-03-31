@@ -8,13 +8,13 @@ const mongoClient = new MongoClient(uri)
 const db = mongoClient.db('universidad')
 
 const getDocuments = async (collectionName) => {
-    const result = await esquemaModelo.find({});
+    const result =  esquemaModelo.find({});
     return result
 }
 
 const getDocumentsWithFilter = async (collectionName, filter) => {
 
-    const result = await esquemaModelo.find(filter);
+    const result =  esquemaModelo.find(filter);
     return result
 }
 
@@ -40,7 +40,7 @@ const updateDocumentById = async (collectionName, { id, data }) => {
 
 const deleteDocumentById = async (collectionName, id) => {
     
-    const result = await esquemaModelo.deleteMany({cedula: id });
+    const result = esquemaModelo.deleteMany({cedula: id });
     return result
 }
 

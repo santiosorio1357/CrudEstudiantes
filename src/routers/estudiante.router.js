@@ -16,6 +16,7 @@ router.post('/estudiantes', async (req, res) => {
     const nuevoEstudiante = req.body;
     const response=await insertDocument("estudiantes",nuevoEstudiante)
     res.send({
+        info:response,
         data:nuevoEstudiante,
         message:"successfully",
         status:200

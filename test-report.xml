@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\src\pruebas\pruebas.test.js">
-    <testCase name="POST endpoint /estudiantes POST /estudiantes should create a new student" duration="269"/>
-    <testCase name="GET endpoint /estudiantes GET /estudiantes/:id should return a student" duration="47"/>
-    <testCase name="GET endpoint /estudiantes GET /estudiantes should return all students" duration="32"/>
-    <testCase name="PUT endpoint /estudiantes Obtiene un id para modificar un estudiante" duration="35"/>
-    <testCase name="DELETE endpoint /estudiantes DELETE /estudiantes/:id should delete a student" duration="30"/>
+    <testCase name="POST endpoint /estudiantes POST /estudiantes should create a new student" duration="113"/>
+    <testCase name="GET endpoint /estudiantes GET /estudiantes/:id should return a student" duration="21"/>
+    <testCase name="GET endpoint /estudiantes GET /estudiantes should return all students" duration="15"/>
+    <testCase name="PUT endpoint /estudiantes Obtiene un id para modificar un estudiante" duration="26"/>
+    <testCase name="DELETE endpoint /estudiantes DELETE /estudiantes/:id should delete a student" duration="15"/>
   </file>
 </testExecutions>
