@@ -8,40 +8,51 @@ chai.use(chaiHttp);
 describe('POST endpoint /estudiantes', () => {
   test('POST /estudiantes should create a new student', async () => {
     // Arrange
-    const newStudent = { nombre: 'María', apellido: 'González', cedula: '87654321', carrera: 'Medicina' };
+    const newStudent = new estudiante ({ 
+      nombre: 'María', 
+      apellido: 'González', 
+      cedula: '87654321', 
+      carrera: 'Medicina' });
     const stub = sinon.stub(estudiante.prototype, "save").resolves({
       newStudent
     });
     // Act
     const response = await chai.request(app).post("/estudiantes").send(newStudent);
-    delete response.body.data._id
     // Assert
     expect(response.status).toBe(200); 
-    expect(response.body.data).toMatchObject(newStudent);
+    expect(response.body.data.nombre).toEqual(newStudent.nombre);
+    expect(response.body.data.apellido).toEqual(newStudent.apellido);
+    expect(response.body.data.cedula).toEqual(newStudent.cedula);
+    expect(response.body.data.carrera).toEqual(newStudent.carrera);
     stub.restore();
   });
 });
-/*
+
 describe('GET endpoint /estudiantes', () => {
   test('GET /estudiantes/:id should return a student', async () => {
     // Arrange
-    const expectedStudent = {  
+    const expectedStudent = new estudiante({  
       "nombre": "María",
       "apellido": "González",
       "cedula": "87654321",
       "carrera": "Medicina"
-    };
+    });
     const id='87654321';
-    axios.get.mockResolvedValueOnce({ status: 200, data: { data: [expectedStudent] } });
+    const stub = sinon.stub(estudiante, "find").resolves({expectedStudent});
     // Act
-    const response = await axios.get(`${URL}/${id}`);
-    const resultStudent = response.data.data[0];
+    const response = await chai.request(app).get(`/estudiantes/$${id}`);
+    const resultStudent = response.body.data["expectedStudent"];
+  
     // Assert
     expect(response.status).toBe(200);
-    expect(resultStudent).toMatchObject(expectedStudent);
+    expect(resultStudent.nombre).toEqual(expectedStudent.nombre);
+    expect(resultStudent.apellido).toEqual(expectedStudent.apellido);
+    expect(resultStudent.cedula).toEqual(expectedStudent.cedula);
+    expect(resultStudent.carrera).toEqual(expectedStudent.carrera);
+    stub.restore();
   });
 });
-
+/*
 describe('GET endpoint /estudiantes', () => {
   test('GET /estudiantes should return all students', async () => {
     // Arrange

@@ -1,5 +1,6 @@
 const { MongoClient, ObjectId } = require('mongodb')
-
+const esquemaModelo = require('../models/estudiante');
+const estudiante = require('../models/estudiante');
 
 const uri = "mongodb+srv://santi:nHTJCPk85pGEyw2R@cluster0.uqhznxt.mongodb.net/?retryWrites=true&w=majority";
 
@@ -15,8 +16,7 @@ const getDocuments = async (collectionName) => {
 
 const getDocumentsWithFilter = async (collectionName, filter) => {
 
-    const collection = db.collection(collectionName)
-    const result = await collection.find(filter).toArray();
+    const result = await esquemaModelo.find(filter);
     return result
 }
 
@@ -29,9 +29,8 @@ const getDocumentsWithFilter = async (collectionName, filter) => {
  * @returns Promise 
  */
 const insertDocument = async (collectionName, data) => {
-    
-    const collection = db.collection(collectionName)
-    const result = await collection.insertOne(data);
+    let estudiante = esquemaModelo(data)
+    const result = await estudiante.save();
     return result
 } 
 

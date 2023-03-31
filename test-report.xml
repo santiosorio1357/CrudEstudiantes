@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="C:\Users\HP\Documents\universidad\semestre7\validacion\CrudEstudiantes\pruebas\pruebas.test.js">
-    <testCase name="POST endpoint /estudiantes POST /estudiantes should create a new student" duration="1449"/>
+  <file path="C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\pruebas\pruebas.test.js">
+    <testCase name="POST endpoint /estudiantes POST /estudiantes should create a new student" duration="71"/>
+    <testCase name="GET endpoint /estudiantes GET /estudiantes/:id should return a student" duration="39"/>
   </file>
 </testExecutions>
