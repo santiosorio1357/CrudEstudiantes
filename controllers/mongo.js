@@ -8,9 +8,7 @@ const mongoClient = new MongoClient(uri)
 const db = mongoClient.db('universidad')
 
 const getDocuments = async (collectionName) => {
-    
-    const collection = db.collection(collectionName)
-    const result = await collection.find({}).toArray();
+    const result = await esquemaModelo.find({});
     return result
 }
 

@@ -52,24 +52,33 @@ describe('GET endpoint /estudiantes', () => {
     stub.restore();
   });
 });
-/*
+
 describe('GET endpoint /estudiantes', () => {
   test('GET /estudiantes should return all students', async () => {
     // Arrange
-    const expectedSchema = {
-      "nombre": "string",
-      "apellido": "string",
-      "cedula": "string",
-      "carrera": "string"
-    };
-    const allStudents = [
-      { nombre: 'John', apellido: 'Doe', cedula: '12345678', carrera: 'Medicina' },
-      { nombre: 'Jane', apellido: 'Doe', cedula: '87654321', carrera: 'Sistemas' }
-    ];
-    axios.get.mockResolvedValueOnce({ status: 200, data: { data: allStudents } });
+    const expectedSchema =[{
+
+      "nombre": "juan",
+      "apellido": "osorio",
+      "cedula": "123",
+      "carrera": "sistemas"
+    },
+    {
+      "nombre": "emanuel",
+      "apellido": "rico",
+      "cedula": "1234",
+      "carrera": "odontologia"
+    }]
+    let stubs = []
+    expectedSchema.forEach(element => {
+      let stub = sinon.stub(estudiante, "find").resolves({element});
+      stubs.push(stub)
+    });
+
     // Act
-    const response = await axios.get(URL);
-    const resultSchema = response.data.data;
+    const response = await chai.request(app).get(`/estudiantes`)
+    const resultSchema = response;
+    console.log(resultSchema);
     // Assert
     expect(response.status).toBe(200);
     resultSchema.forEach(Data => {
@@ -77,10 +86,15 @@ describe('GET endpoint /estudiantes', () => {
       expect(typeof Data.apellido).toBe(expectedSchema.apellido);
       expect(typeof Data.cedula).toBe(expectedSchema.cedula);
       expect(typeof Data.carrera).toBe(expectedSchema.carrera);
+      
     });
+    stubs.forEach(element =>{
+      element.restore();
+    })
+
   });
 });
-
+/*
 describe('PUT endpoint /estudiantes', () => {
   test('PUT /estudiantes/:id should update a student', async () => {
     // Arrange

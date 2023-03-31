@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1680236068211" clover="3.2.0">
-  <project timestamp="1680236068212" name="All files">
-    <metrics statements="66" coveredstatements="47" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="4" elements="76" coveredelements="51" complexity="0" loc="66" ncloc="66" packages="4" files="4" classes="4"/>
+<coverage generated="1680284192447" clover="3.2.0">
+  <project timestamp="1680284192447" name="All files">
+    <metrics statements="65" coveredstatements="51" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="6" elements="75" coveredelements="57" complexity="0" loc="65" ncloc="65" packages="4" files="4" classes="4"/>
     <package name="CrudEstudiantes">
       <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.js" path="C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\app.js">
@@ -20,9 +20,9 @@
       </file>
     </package>
     <package name="CrudEstudiantes.controllers">
-      <metrics statements="27" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
+      <metrics statements="26" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
       <file name="mongo.js" path="C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\controllers\mongo.js">
-        <metrics statements="27" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
+        <metrics statements="26" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -30,26 +30,25 @@
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
       </file>
     </package>
     <package name="CrudEstudiantes.models">
@@ -63,15 +62,15 @@
       </file>
     </package>
     <package name="CrudEstudiantes.routers">
-      <metrics statements="24" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
+      <metrics statements="24" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
       <file name="estudiante.router.js" path="C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\routers\estudiante.router.js">
-        <metrics statements="24" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
+        <metrics statements="24" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>

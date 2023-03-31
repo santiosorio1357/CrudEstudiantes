@@ -1,7 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\pruebas\pruebas.test.js">
-    <testCase name="POST endpoint /estudiantes POST /estudiantes should create a new student" duration="71"/>
-    <testCase name="GET endpoint /estudiantes GET /estudiantes/:id should return a student" duration="39"/>
+    <testCase name="POST endpoint /estudiantes POST /estudiantes should create a new student" duration="94">
+      <failure message="Error: listen EADDRINUSE: address already in use :::3001"><![CDATA[Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1733:16)
+    at listenInCluster (node:net:1781:12)
+    at Server.listen (node:net:1869:7)
+    at Function.listen (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\express\lib\application.js:635:24)
+    at Object.listen (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\app.js:10:5)
+    at Runtime._execModule (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runtime\build\index.js:1429:24)
+    at Runtime._loadModule (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runtime\build\index.js:1013:12)
+    at Runtime.requireModule (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runtime\build\index.js:873:12)
+    at Runtime.requireModuleOrMock (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runtime\build\index.js:1039:21)
+    at Object.<anonymous> (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\pruebas\pruebas.test.js:1:30)
+    at Runtime._execModule (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runtime\build\index.js:1429:24)
+    at Runtime._loadModule (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runtime\build\index.js:1013:12)
+    at Runtime.requireModule (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runtime\build\index.js:873:12)
+    at jestAdapter (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:77:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runTestInternal (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runner\build\testWorker.js:106:12)]]></failure>
+    </testCase>
+    <testCase name="GET endpoint /estudiantes GET /estudiantes/:id should return a student" duration="15"/>
+    <testCase name="GET endpoint /estudiantes GET /estudiantes should return all students" duration="7">
+      <failure message="TypeError: Attempted to wrap find which is already wrapped"><![CDATA[TypeError: Attempted to wrap find which is already wrapped
+    at checkWrappedMethod (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\sinon\lib\sinon\util\core\wrap-method.js:67:21)
+    at wrapMethod (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\sinon\lib\sinon\util\core\wrap-method.js:138:13)
+    at Function.stub (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\sinon\lib\sinon\stub.js:129:44)
+    at Sandbox.stub (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\sinon\lib\sinon\sandbox.js:389:37)
+    at stub (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\pruebas\pruebas.test.js:74:24)
+    at Array.forEach (<anonymous>)
+    at Object.forEach (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\pruebas\pruebas.test.js:73:20)
+    at Promise.then.completed (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\utils.js:293:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\utils.js:226:10)
+    at _callCircusTest (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:297:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:233:3)
+    at _runTestsForDescribeBlock (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:135:9)
+    at _runTestsForDescribeBlock (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:130:9)
+    at run (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:68:3)
+    at runAndTransformResultsToJestFormat (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runner\build\testWorker.js:106:12)
+--------------
+Error: Stack Trace for original
+    at extendObjectWithWrappedMethods (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\sinon\lib\sinon\util\core\wrap-method.js:172:34)
+    at wrapMethod (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\sinon\lib\sinon\util\core\wrap-method.js:160:5)
+    at Function.stub (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\sinon\lib\sinon\stub.js:129:44)
+    at Sandbox.stub (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\sinon\lib\sinon\sandbox.js:389:37)
+    at stub (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\pruebas\pruebas.test.js:74:24)
+    at Array.forEach (<anonymous>)
+    at Object.forEach (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\pruebas\pruebas.test.js:73:20)
+    at Promise.then.completed (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\utils.js:293:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\utils.js:226:10)
+    at _callCircusTest (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:297:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:233:3)
+    at _runTestsForDescribeBlock (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:135:9)
+    at _runTestsForDescribeBlock (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:130:9)
+    at run (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\run.js:68:3)
+    at runAndTransformResultsToJestFormat (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\HOME\Desktop\udem\septimoSemestre\validacionYVerificacion\CrudEstudiantes\node_modules\jest-runner\build\testWorker.js:106:12)]]></failure>
+    </testCase>
   </file>
 </testExecutions>
