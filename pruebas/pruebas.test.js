@@ -1,23 +1,28 @@
-const axios = require('axios');
+const app = require('../app');
+const sinon = require('sinon');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
 
-jest.mock('axios');
+chai.use(chaiHttp);
 
-const URL="http://localhost:8000/estudiantes"
-
-describe('API endpoint /estudiantes', () => {
-
+describe('POST endpoint /estudiantes', () => {
   test('POST /estudiantes should create a new student', async () => {
     // Arrange
     const newStudent = { nombre: 'María', apellido: 'González', cedula: '87654321', carrera: 'Medicina' };
-    axios.post.mockResolvedValueOnce({ status: 200, data: newStudent });
+    const stub = sinon.stub(newStudent.prototype, "save").resolves({
+      newStudent
+    });
     // Act
-    const response = await axios.post(URL, newStudent);
+    const response = await chai.post(app).post("/estudiantes").send(newStudent);
     const resultStudent = response.data;
     // Assert
     expect(response.status).toBe(200); 
     expect(resultStudent).toMatchObject(newStudent);
+    stub.restore();
   });
+});
 
+describe('GET endpoint /estudiantes', () => {
   test('GET /estudiantes/:id should return a student', async () => {
     // Arrange
     const expectedStudent = {  
@@ -35,7 +40,9 @@ describe('API endpoint /estudiantes', () => {
     expect(response.status).toBe(200);
     expect(resultStudent).toMatchObject(expectedStudent);
   });
+});
 
+describe('GET endpoint /estudiantes', () => {
   test('GET /estudiantes should return all students', async () => {
     // Arrange
     const expectedSchema = {
@@ -61,6 +68,9 @@ describe('API endpoint /estudiantes', () => {
       expect(typeof Data.carrera).toBe(expectedSchema.carrera);
     });
   });
+});
+
+describe('PUT endpoint /estudiantes', () => {
   test('PUT /estudiantes/:id should update a student', async () => {
     // Arrange
     const updatedStudent = { nombre: 'María', apellido: 'González', cedula: '87654321', carrera: 'sistemas' };
@@ -88,6 +98,9 @@ describe('API endpoint /estudiantes', () => {
     expect(response.status).toBe(200);
     expect(resultStudent).toMatchObject(expectedStudent);
   });
+});
+
+describe('DELETE endpoint /estudiantes', () => {
   test('DELETE /estudiantes/:id should delete a student', async () => {
     // Arrange
     const id = '87654321';
