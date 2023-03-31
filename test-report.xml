@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\HP\Documents\universidad\semestre7\validacion\CrudEstudiantes\pruebas\pruebas.test.js">
+    <testCase name="POST endpoint /estudiantes POST /estudiantes should create a new student" duration="1449"/>
+  </file>
+</testExecutions>

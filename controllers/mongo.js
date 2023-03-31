@@ -32,7 +32,6 @@ const insertDocument = async (collectionName, data) => {
     
     const collection = db.collection(collectionName)
     const result = await collection.insertOne(data);
-    console.log("entra")
     return result
 } 
 
