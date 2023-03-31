@@ -93,17 +93,24 @@ describe('PUT endpoint /estudiantes', () => {
     stub.resolves();
  });
 });
-/*
+
 describe('DELETE endpoint /estudiantes', () => {
   test('DELETE /estudiantes/:id should delete a student', async () => {
     // Arrange
-    const id = '87654321';
-    const mockResponse = { status: 200 };
-    axios.delete = jest.fn().mockResolvedValue(mockResponse);
-    // Act
-    const response = await axios.delete(`${URL}/${id}`);
-    // Assert
-    expect(response.status).toBe(200);
+    const newStudent = new estudiante ({ 
+      nombre: 'María', 
+      apellido: 'González', 
+      cedula: '87654321', 
+      carrera: 'Medicina' });
+    const stub = sinon.stub(estudiante.prototype, "save").resolves(newStudent);
+    const eliminarStub = sinon.stub(estudiante, "deleteMany").resolves(newStudent);
+
+    const response = await chai.request(app).delete(`/estudiantes/${newStudent.cedula}`);
+    
+    expect(response.statusCode).toBe(200);
+    expect(response.ok).toBe(true);
+    stub.resolves();
+    eliminarStub.resolves();
   });
   
-});*/
+});

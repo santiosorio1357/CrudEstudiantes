@@ -39,8 +39,8 @@ const updateDocumentById = async (collectionName, { id, data }) => {
 }
 
 const deleteDocumentById = async (collectionName, id) => {
-    const collection = db.collection(collectionName)
-    const result = await collection.deleteMany({ cedula: id });
+    
+    const result = await esquemaModelo.deleteMany({cedula: id });
     return result
 }
 
