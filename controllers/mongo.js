@@ -33,9 +33,8 @@ const insertDocument = async (collectionName, data) => {
 } 
 
 const updateDocumentById = async (collectionName, { id, data }) => {
-    const collection = db.collection(collectionName)
-    delete data._id
-    const result = await collection.replaceOne({cedula: id }, data);
+    let estudiante = esquemaModelo(data)
+    const result = await estudiante.replaceOne({cedula: id }, data)
     return result
 }
 

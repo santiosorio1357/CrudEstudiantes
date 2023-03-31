@@ -56,75 +56,44 @@ describe('GET endpoint /estudiantes', () => {
 describe('GET endpoint /estudiantes', () => {
   test('GET /estudiantes should return all students', async () => {
     // Arrange
-    const expectedSchema =[{
-
-      "nombre": "juan",
-      "apellido": "osorio",
-      "cedula": "123",
-      "carrera": "sistemas"
-    },
-    {
-      "nombre": "emanuel",
-      "apellido": "rico",
-      "cedula": "1234",
-      "carrera": "odontologia"
-    }]
-    let stubs = []
-    expectedSchema.forEach(element => {
-      let stub = sinon.stub(estudiante, "find").resolves({element});
-      stubs.push(stub)
+    const expectedStudent = new estudiante({  
+      "nombre": "string",
+      "apellido": "string",
+      "cedula": "string",
+      "carrera": "string"
     });
-
+    
+    const stub = sinon.stub(estudiante, "find").resolves({expectedStudent});
     // Act
-    const response = await chai.request(app).get(`/estudiantes`)
-    const resultSchema = response;
-    console.log(resultSchema);
+    const response = await chai.request(app).get(`/estudiantes`);
+    const resultStudent = response.body.data["expectedStudent"];
+  
     // Assert
     expect(response.status).toBe(200);
-    resultSchema.forEach(Data => {
-      expect(typeof Data.nombre).toBe(expectedSchema.nombre);
-      expect(typeof Data.apellido).toBe(expectedSchema.apellido);
-      expect(typeof Data.cedula).toBe(expectedSchema.cedula);
-      expect(typeof Data.carrera).toBe(expectedSchema.carrera);
-      
-    });
-    stubs.forEach(element =>{
-      element.restore();
-    })
-
+    expect(typeof resultStudent.nombre).toEqual(expectedStudent.nombre);
+    expect(typeof resultStudent.apellido).toEqual(expectedStudent.apellido);
+    expect(typeof resultStudent.cedula).toEqual(expectedStudent.cedula);
+    expect(typeof resultStudent.carrera).toEqual(expectedStudent.carrera);
+    stub.restore();
   });
+   
+
+  
+});
+
+describe('PUT endpoint /estudiantes', () => {
+  test("Obtiene un id para modificar un estudiante", async () => {
+    const estudianteUpdated = new estudiante({nombre: "emanuel", apellido: "rico", cedula: "1196547", carrera: "sistemas" });
+    const stub = sinon.stub(estudiante, "replaceOne").resolves({
+       nombre: estudianteUpdated.nombre, apellido: estudianteUpdated.apellido, cedula: estudianteUpdated.cedula, carrera: "Ingenieria Industrial",
+    });
+    const response = await chai.request(app).put(`/estudiantes/${estudianteUpdated.cedula}`).send({ carrera: "Ingenieria Industrial" });
+    expect(response.statusCode).toBe(200);
+    expect(response.ok).toBe(true);
+    stub.resolves();
+ });
 });
 /*
-describe('PUT endpoint /estudiantes', () => {
-  test('PUT /estudiantes/:id should update a student', async () => {
-    // Arrange
-    const updatedStudent = { nombre: 'María', apellido: 'González', cedula: '87654321', carrera: 'sistemas' };
-    const expectedStudent = {
-      "data": {
-        "acknowledged": true,
-        "modifiedCount": 1,
-        "upsertedId": null,
-        "upsertedCount": 0,
-        "matchedCount": 1
-      },
-      "message": "successfully",
-      "status": 200
-    };
-
-    const mockedResponse = { data: expectedStudent, status: 200 };
-    axios.put = jest.fn().mockResolvedValue(mockedResponse);
-
-    // Act
-    const id='87654321'
-    const response = await axios.put(`${URL}/${id}`, updatedStudent);
-    const resultStudent = response.data;
-
-    // Assert
-    expect(response.status).toBe(200);
-    expect(resultStudent).toMatchObject(expectedStudent);
-  });
-});
-
 describe('DELETE endpoint /estudiantes', () => {
   test('DELETE /estudiantes/:id should delete a student', async () => {
     // Arrange

@@ -32,7 +32,7 @@ router.get('/estudiantes/:id', async (req, res) => {
         status:200
     })
 });
-
+ 
 // Actualizar un estudiante por su ID
 router.put('/estudiantes/:id', async (req, res) => {
     const id=req.params.id
