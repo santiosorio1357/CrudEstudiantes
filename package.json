@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "cd src && jest --coverage",
     "dev": "nodemon app.js"
   },
   "author": "",
@@ -30,6 +30,7 @@
     "jest-sonar-reporter": "^2.0.0",
     "mongoose": "^7.0.0",
     "nodemon": "^2.0.20",
-    "sinon": "^15.0.3"
+    "sinon": "^15.0.3",
+    "sonarqube-scanner": "^3.0.1"
   }
 }
