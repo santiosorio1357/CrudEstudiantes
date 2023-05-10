@@ -14,8 +14,7 @@
   },
   "scripts": {
     "test": "jest --runInBand --force-exit",
-    "dev": "nodemon app.js",
-    "start": "node app.js"
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
